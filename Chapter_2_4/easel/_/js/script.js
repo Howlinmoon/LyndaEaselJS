@@ -11,17 +11,17 @@ function init() {
     // now, trying using a radial gradient instead
     shape.graphics.beginRadialGradientStroke(["yellow", "red"], [0, 1], 50, 250, 0, 50, 250, 250);
     
-    // width of the line in pixels
-    shape.graphics.setStrokeStyle(10);
+    // width of the line in pixels, style of line endings, style of corners (joins)
+    shape.graphics.setStrokeStyle(10, "round", "round");
     
     // set the starting position of our line
     shape.graphics.moveTo(50, 50);
     // draw a line from the current position to an end position
-    shape.graphics.lineTo(250,250);
+    shape.graphics.quadraticCurveTo(270, 10,250,250);
     // subsequent lines continue where the last one left off
     shape.graphics.lineTo(50,250);
     // close the path automatically
-    shape.graphics.closePath();
+    // shape.graphics.closePath();
     
 
 	stage.addChild(shape);
