@@ -1,5 +1,5 @@
 # LyndaEaselJS
 
-Continue here next time: (finish)
-http://www.lynda.com/CreateJS-tutorials/Understanding-basic-fills-colors/108135/112951-4.html
+Continue here next time:
+http://www.lynda.com/CreateJS-tutorials/Drawing-other-graphic-primitives/108135/112953-4.html
 
