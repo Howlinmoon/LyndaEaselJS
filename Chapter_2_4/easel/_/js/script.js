@@ -7,7 +7,10 @@ function init() {
     // shape.graphics.beginStroke("purple");
     // using a linear gradient stroke
     // note the start x,y and end x,y are the same as the endpoints of the line.
-    shape.graphics.beginLinearGradientStroke(["yellow", "red"], [0, 1], 50, 50, 250, 250);
+    //shape.graphics.beginLinearGradientStroke(["yellow", "red"], [0, 1], 50, 50, 250, 250);
+    // now, trying using a radial gradient instead
+    shape.graphics.beginRadialGradientStroke(["yellow", "red"], [0, 1], 50, 250, 0, 50, 250, 250);
+    
     // width of the line in pixels
     shape.graphics.setStrokeStyle(10);
     
