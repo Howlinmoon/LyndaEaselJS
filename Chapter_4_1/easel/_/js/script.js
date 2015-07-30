@@ -17,13 +17,20 @@ function init() {
 	}),
 	ship = new createjs.BitmapAnimation(ss);
 	
-	ship.x = centerX;
-	ship.y = centerY;
-	ship.gotoAndPlay("explode");
+	ship.gotoAndPlay("fly");
 
 	stage.addChild(ship);	
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addListener(function() {
+        
+        var diffX = stage.mouseX - ship.x;
+        var diffY = stage.mouseY - ship.y;
+        
+        ship.x += diffX / 20;
+        ship.y += diffY / 20;
+        
+        // orient the ship relative to the mouse
+        ship.rotation = Math.atan2(diffY, diffX) * 180 / Math.PI;
 		stage.update();
 	});
 }
