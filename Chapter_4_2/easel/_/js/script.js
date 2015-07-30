@@ -19,7 +19,28 @@ function init() {
 	ship.x = centerX;
 	ship.y = centerY;
 	ship.gotoAndPlay("fly");
+    
+    // explode the ship when we click on it
+    //ship.onClick = function(e) {
+    //    ship.gotoAndPlay( "explode" );
+    //}
+    
+    // trying to simply pass the mouse over the ship should explode it
+    ship.onMouseOver = function(e) {
+        ship.gotoAndPlay("explode");
+    }
+    
+    // attempt to "drag and drop" the ship by changing its x,y co-ords
+    ship.onPress = function(e) {
+        // e = the object being targeted, in this case, the ship
+        e.onMouseMove = function(ev) {
+            e.target.x = ev.stageX;
+            e.target.y = ev.stageY;
+        }
+    }
 
+    // mouseOver is disabled by default due to cpu hit
+    stage.enableMouseOver();
 	stage.addChild(ship);	
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addListener(function() {
